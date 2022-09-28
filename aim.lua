@@ -10,7 +10,7 @@ end
 local SilentAimSettings = {
     Enabled = false,
     
-    ClassName = "Taklaya Getiren",
+    ClassName = "UniversalSilentAim",
     ToggleKey = "RightAlt",
     
     TeamCheck = false,
