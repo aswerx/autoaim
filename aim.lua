@@ -16,7 +16,7 @@ local SilentAimSettings = {
     TeamCheck = false,
     VisibleCheck = false, 
     TargetPart = "HumanoidRootPart",
-    SilentAimMethod = "Raycast",
+    SilentAimMethod = "Mouse.Hit/Target",
     
     FOVRadius = 30,
     FOVVisible = false,
