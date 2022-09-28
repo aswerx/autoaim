@@ -10,7 +10,7 @@ end
 local SilentAimSettings = {
     Enabled = false,
     
-    ClassName = "UniversalSilentAim",
+    ClassName = "Taklaya Getiren",
     ToggleKey = "RightAlt",
     
     TeamCheck = false,
@@ -18,7 +18,7 @@ local SilentAimSettings = {
     TargetPart = "HumanoidRootPart",
     SilentAimMethod = "Raycast",
     
-    FOVRadius = 130,
+    FOVRadius = 30,
     FOVVisible = false,
     ShowSilentAimTarget = false, 
     
@@ -241,8 +241,9 @@ end
 
 -- ui creating & handling
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xaxaxaxaxaxaxaxaxa/Libraries/main/UI's/Linoria/Source.lua"))()
+Library:SetWatermark("github.com/Averiias")
 
-local Window = Library:CreateWindow("Universal Silent Aim")
+local Window = Library:CreateWindow("Universal Silent Aim, by Averiias, xaxa, and Stefanuk12")
 local GeneralTab = Window:AddTab("General")
 local MainBOX = GeneralTab:AddLeftTabbox("Main") do
     local Main = MainBOX:AddTab("Main")
@@ -270,7 +271,7 @@ local MainBOX = GeneralTab:AddLeftTabbox("Main") do
         "Raycast","FindPartOnRay",
         "FindPartOnRayWithWhitelist",
         "FindPartOnRayWithIgnoreList",
-	"Mouse.Hit/Target"
+        "Mouse.Hit/Target"
     }}):OnChanged(function() 
         SilentAimSettings.SilentAimMethod = Options.Method.Value 
     end)
@@ -296,7 +297,7 @@ local FieldOfViewBOX = GeneralTab:AddLeftTabbox("Field Of View") do
         fov_circle.Visible = Toggles.Visible.Value
         SilentAimSettings.FOVVisible = Toggles.Visible.Value
     end)
-    Main:AddSlider("Radius", {Text = "FOV Circle Radius", Min = 0, Max = 360, Default = 30, Rounding = 0}):OnChanged(function()
+    Main:AddSlider("Radius", {Text = "FOV Circle Radius", Min = 0, Max = 360, Default = 130, Rounding = 0}):OnChanged(function()
         fov_circle.Radius = Options.Radius.Value
         SilentAimSettings.FOVRadius = Options.Radius.Value
     end)
