@@ -267,10 +267,10 @@ local MainBOX = GeneralTab:AddLeftTabbox("Main") do
         SilentAimSettings.TargetPart = Options.TargetPart.Value
     end)
     Main:AddDropdown("Method", {Text = "Silent Aim Method", Default = SilentAimSettings.SilentAimMethod, Values = {
-	"Mouse.Hit/Target"
         "Raycast","FindPartOnRay",
         "FindPartOnRayWithWhitelist",
         "FindPartOnRayWithIgnoreList",
+	"Mouse.Hit/Target"
     }}):OnChanged(function() 
         SilentAimSettings.SilentAimMethod = Options.Method.Value 
     end)
