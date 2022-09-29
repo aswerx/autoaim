@@ -18,7 +18,7 @@ local SilentAimSettings = {
     TargetPart = "HumanoidRootPart",
     SilentAimMethod = "Mouse.Hit/Target",
     
-    FOVRadius = 30,
+    FOVRadius = 35,
     FOVVisible = false,
     ShowSilentAimTarget = false, 
     
