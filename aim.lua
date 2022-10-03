@@ -247,7 +247,7 @@ local GeneralTab = Window:AddTab("Genel")
 local MainBOX = GeneralTab:AddLeftTabbox("Ana Menü") do
     local Main = MainBOX:AddTab("Ana Menü")
     
-    Main:AddToggle("aim_Enabled", {Text = "Enabled"}):AddKeyPicker("aim_Enabled_KeyPicker", {Default = "RightAlt", SyncToggleState = true, Mode = "Always", Text = "Enabled", NoUI = false});
+    Main:AddButton("aim_Enabled", {Text = "Enabled"}):AddKeyPicker("aim_Enabled_KeyPicker", {Default = "RightAlt", SyncToggleState = true, Mode = "Always", Text = "Enabled", NoUI = false});
     Options.aim_Enabled_KeyPicker:OnClick(function()
         SilentAimSettings.Enabled = SilentAimSettings.Enabled
         
