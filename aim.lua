@@ -240,7 +240,7 @@ local function getClosestPlayer()
 end
 
 -- ui creating & handling
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/aswerx/ui/main/ui.lua"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
 local Window = Library:CreateWindow("Taklaya Getiren")
 local GeneralTab = Window:AddTab("Genel")
