@@ -249,7 +249,6 @@ local MainBOX = GeneralTab:AddLeftTabbox("Ana Menü") do
     
     Main:AddToggle("aim_Enabled", {Text = "Enabled"}):AddKeyPicker("aim_Enabled_KeyPicker", {Default = "RightAlt", SyncToggleState = true, Mode = "Toggle", Text = "Enabled", NoUI = false});
     Options.aim_Enabled_KeyPicker:OnClick(function()
-        SilentAimSettings.Enabled = not SilentAimSettings.Enabled
         
         Toggles.aim_Enabled.Value = SilentAimSettings.Enabled
         Toggles.aim_Enabled:SetValue(SilentAimSettings.Enabled)
