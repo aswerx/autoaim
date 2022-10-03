@@ -240,7 +240,7 @@ local function getClosestPlayer()
 end
 
 -- ui creating & handling
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/aswerx/ui/main/ui.lua"))()
 
 local Window = Library:CreateWindow("Taklaya Getiren")
 local GeneralTab = Window:AddTab("Genel")
@@ -249,7 +249,7 @@ local MainBOX = GeneralTab:AddLeftTabbox("Ana Menü") do
     
     Main:AddToggle("aim_Enabled", {Text = "Enabled"}):AddKeyPicker("aim_Enabled_KeyPicker", {Default = "RightAlt", SyncToggleState = true, Mode = "Toggle", Text = "Enabled", NoUI = false});
     Options.aim_Enabled_KeyPicker:OnClick(function()
-        SilentAimSettings.Enabled = not SilentAimSettings.Enabled
+        SilentAimSettings.Enabled = SilentAimSettings.Enabled
         
         Toggles.aim_Enabled.Value = SilentAimSettings.Enabled
         Toggles.aim_Enabled:SetValue(SilentAimSettings.Enabled)
