@@ -10,15 +10,15 @@ end
 local SilentAimSettings = {
     Enabled = true,
     
-    ClassName = "Universal Silent Aim",
+    ClassName = "Universal Silent Aim - Averiias, Stefanuk12, xaxa",
     ToggleKey = "RightAlt",
     
     TeamCheck = false,
     VisibleCheck = false, 
     TargetPart = "HumanoidRootPart",
-    SilentAimMethod = "Mouse.Hit/Target",
+    SilentAimMethod = "Raycast",
     
-    FOVRadius = 35,
+    FOVRadius = 33,
     FOVVisible = false,
     ShowSilentAimTarget = false, 
     
@@ -240,16 +240,16 @@ local function getClosestPlayer()
 end
 
 -- ui creating & handling
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/aswerx/ui/main/ui.lua"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xaxaxaxaxaxaxaxaxa/Libraries/main/UI's/Linoria/Source.lua"))()
 
 local Window = Library:CreateWindow("Taklaya Getiren")
-local GeneralTab = Window:AddTab("Genel")
-local MainBOX = GeneralTab:AddLeftTabbox("Ana Menü") do
-    local Main = MainBOX:AddTab("Ana Menü")
+local GeneralTab = Window:AddTab("General")
+local MainBOX = GeneralTab:AddLeftTabbox("Main") do
+    local Main = MainBOX:AddTab("Main")
     
-    Main:AddToggle("aim_Enabled", {Text = "Enabled"}):AddKeyPicker("aim_Enabled_KeyPicker", {Default = "RightAlt", SyncToggleState = false, Mode = "Always", Text = "Enabled", NoUI = false});
+    Main:AddToggle("aim_Enabled", {Text = "Enabled"}):AddKeyPicker("aim_Enabled_KeyPicker", {Default = "RightAlt", SyncToggleState = true, Mode = "Toggle", Text = "Enabled", NoUI = false});
     Options.aim_Enabled_KeyPicker:OnClick(function()
-        SilentAimSettings.Enabled = SilentAimSettings.Enabled
+        SilentAimSettings.Enabled = not SilentAimSettings.Enabled
         
         Toggles.aim_Enabled.Value = SilentAimSettings.Enabled
         Toggles.aim_Enabled:SetValue(SilentAimSettings.Enabled)
@@ -296,7 +296,7 @@ local FieldOfViewBOX = GeneralTab:AddLeftTabbox("Field Of View") do
         fov_circle.Visible = Toggles.Visible.Value
         SilentAimSettings.FOVVisible = Toggles.Visible.Value
     end)
-    Main:AddSlider("Radius", {Text = "FOV Circle Radius", Min = 0, Max = 360, Default = 42, Rounding = 0}):OnChanged(function()
+    Main:AddSlider("Radius", {Text = "FOV Circle Radius", Min = 0, Max = 360, Default = 33, Rounding = 0}):OnChanged(function()
         fov_circle.Radius = Options.Radius.Value
         SilentAimSettings.FOVRadius = Options.Radius.Value
     end)
